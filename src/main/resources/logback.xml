@@ -1,0 +1,17 @@
+<configuration>
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"application":"helloWorld"}</customFields>
+            <fieldNames>
+                <version>data_version</version>
+                <message>description</message>
+            </fieldNames>
+            <includeCallerData>true</includeCallerData>
+        </encoder>
+    </appender>
+    <root level="INFO">
+        <!--<appender-ref ref="jsonAppender"/>-->
+        <!--<appender-ref ref ="stash"/>-->
+        <appender-ref ref="consoleAppender"/>
+    </root>
+</configuration>
